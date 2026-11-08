@@ -59,9 +59,7 @@ def _run(db,root,bridge,trigger,day,fetcher,recheck=False):
     completed=db.conn.execute('SELECT r.* FROM completed_days d JOIN runs r ON d.run_id=r.id WHERE d.execution_date=?',(day,)).fetchone()
     if completed and not recheck:
         stats={'found':0,'verified_new':0,'duplicates':0}
-        path,report=generate(db,run_id,stats,[],root)
-        report='> 该执行日已经完成；本次不重复搜索、分析或推荐岗位。原日报可在历史执行记录中查看。\n\n'+report
-        Path(path).write_text(report,encoding='utf-8')
+        path,report=generate(db,run_id,stats,[],root,outcome='skipped')
         with db.conn:db.conn.execute("UPDATE runs SET status='skipped',finished_at=?,report_path=?,stats=? WHERE id=?",(now(),path,json.dumps(stats),run_id))
         write_log(root,run_id,day,'skipped',stats,[])
         return {'run_id':run_id,'status':'skipped','message':'该执行日已完成，未重复搜索、分析或推荐。','report':report,'report_path':path}
