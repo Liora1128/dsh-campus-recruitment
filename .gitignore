@@ -1,0 +1,33 @@
+# Local application data and user application history must stay off GitHub.
+/data/
+/reports/
+/logs/
+/verification/
+/local-data/
+**/data/
+**/reports/
+**/logs/
+
+# Credentials and local overrides (none are required in the source repository).
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*credentials*.yaml
+*credentials*.yml
+config.local.json
+
+# Python/runtime caches and local development artifacts.
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+node_modules/
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+*.log

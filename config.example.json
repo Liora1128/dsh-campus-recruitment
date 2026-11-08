@@ -1,0 +1,16 @@
+{
+  "dataRoot": "./local-data",
+  "python": "",
+  "node": "",
+  "browser": "",
+  "provider": "minimax",
+  "model": "MiniMax-M3.1-Flash",
+  "reasoningEffort": "low",
+  "credentialRef": "MINIMAX_API_KEY",
+  "region": "cn",
+  "monthlySearchLimit": 260,
+  "graduation_year": 2027,
+  "profile": "示例：2027届自动化相关专业毕业生，关注电气控制、PLC、工业软件和嵌入式研发。请替换成自己的背景。",
+  "keywords": ["电气控制 自动化 研发", "PLC 工业控制 运动控制", "C++ Qt SCADA 上位机", "嵌入式软件 Linux STM32", "工业物联网 智能制造 研发"],
+  "official_domains": []
+}

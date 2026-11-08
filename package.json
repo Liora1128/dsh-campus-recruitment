@@ -1,0 +1,60 @@
+{
+  "name": "dsh-campus-recruitment",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "Native DSH campus recruitment and application tracking with an on-demand Python/SQLite backend.",
+  "main": "./plugin/index.js",
+  "exports": {
+    ".": "./plugin/index.js",
+    "./client": "./plugin/client.js",
+    "./locale/*.json": "./plugin/locale/*.json",
+    "./icon": "./plugin/icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "plugin/*.js",
+    "plugin/icon.svg",
+    "plugin/locale/*.json",
+    "backend.py",
+    "recruit/*.py",
+    "recruit/render.mjs",
+    "tools/*.mjs",
+    "Setup.ps1",
+    "cordis.patch.yml",
+    "config.example.json",
+    "README.md",
+    "docs/*.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "doctor": "node tools/doctor.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:python": "python -m unittest discover -s tests -v"
+  },
+  "engines": {
+    "dsh": ">=0.2.2-rc.1 <0.3.0",
+    "node": ">=22"
+  },
+  "os": [
+    "win32"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Liora1128/dsh-campus-recruitment.git"
+  }
+}

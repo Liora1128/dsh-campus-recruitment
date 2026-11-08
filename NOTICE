@@ -1,0 +1,5 @@
+This project contains original plugin/backend code distributed under MIT.
+It uses Python/Node standard libraries and the DSH Host/Client interfaces.
+React is supplied by the DSH browser runtime and is not bundled here.
+Chrome, Edge, DSH and MiniMax services are not redistributed or endorsed.
+No credentials, personal browser profiles or real recruitment records are included.
